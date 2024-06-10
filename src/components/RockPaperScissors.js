@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Player from "./Player";
 import Computer from "./Computer";
 import Result from "./Result";
+import "../assets/css/buble.css";
+import "../assets/css/RockPaperScissors.css";
 class RockPaperScissors extends Component {
   state = {};
   render() {
