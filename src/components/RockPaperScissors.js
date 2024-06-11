@@ -14,7 +14,9 @@ class RockPaperScissors extends Component {
         </div>
         <div className="col-6">
           <Result />
-          <button>Play game</button>
+          <div className="mt-5 text-center">
+            <button className="btn bnt-rouder btn-success btn-lg">Play game</button>
+          </div>
         </div>
         <div className="col-3">
           <Computer />

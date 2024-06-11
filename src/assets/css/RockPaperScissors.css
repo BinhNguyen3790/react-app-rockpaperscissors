@@ -1,12 +1,17 @@
 .App {
   background-image: url("../imgs/bgGame.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 350px;
   background-size: cover;
   height: 100vh;
   color: #fff;
+  background-color: #000;
 }
 
 img {
   width: 100%;
+}
+
+.thethinkComputer img {
+  transform: rotateY(180deg);
 }
