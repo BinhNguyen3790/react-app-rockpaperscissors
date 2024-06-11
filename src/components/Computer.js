@@ -5,7 +5,7 @@ class Computer extends Component {
     return (
       <div>
         <div>
-          <div className="thethink">
+          <div className="thethink thethinkComputer">
             <img src="../assets/imgs/rock.png" alt="rock" />
           </div>
           <div className="speech-bubble"></div>

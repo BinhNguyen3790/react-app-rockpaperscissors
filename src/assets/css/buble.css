@@ -2,7 +2,7 @@
 	position: relative;
 	background: #45D994;
 	border-radius: .4em;
-	
+
 }
 
 .speech-bubble:after {
@@ -13,9 +13,14 @@
 	width: 0;
 	height: 0;
 	border: 35px solid transparent;
-	border-top-color: #45D994;
+	border-top-color: #fff;
 	border-bottom: 0;
 	border-left: 0;
 	margin-left: -17.5px;
 	margin-bottom: -35px;
+}
+
+.thethink {
+	border: 3px solid #fff;
+	border-radius: 10px;
 }
