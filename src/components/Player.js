@@ -1,35 +1,39 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Player extends Component {
-  state = {};
   render() {
     return (
       <div>
         <div className="thethink">
-          <img src="../assets/imgs/rock.png" alt="rock" />
+          <img src={this.props.arrayChose.find((item) => item.chose === true).img} alt="rock" />
         </div>
         <div className="speech-bubble"></div>
         <img src="../assets/imgs/player.png" alt="player" />
         <div className="row">
-          <div className="col-4">
-            <button>
-              <img src="../assets/imgs/rock.png" alt="rock" />
-            </button>
-          </div>
-          <div className="col-4">
-            <button>
-              <img src="../assets/imgs/paper.png" alt="paper" />
-            </button>
-          </div>
-          <div className="col-4">
-            <button>
-              <img src="../assets/imgs/scissors.png" alt="scissors" />
-            </button>
-          </div>
+          {this.props.arrayChose.map((item, index) => {
+            let border = {};
+            if (item.chose) {
+              border = { border: "3px solid orange" };
+            }
+            return (
+              <div className="col-4" key={index}>
+                <button style={border} className="btn btn-rounder bg-white">
+                  <img src={item.img} alt={item.id} />
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
     );
   }
 }
 
-export default Player;
+const mapStateToProps = (state) => {
+  return {
+    arrayChose: state.RockPaperScissors.arrayChose,
+  };
+};
+
+export default connect(mapStateToProps)(Player);

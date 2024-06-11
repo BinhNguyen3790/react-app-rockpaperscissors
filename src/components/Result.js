@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Result extends Component {
   state = {};
@@ -6,11 +7,11 @@ class Result extends Component {
     return (
       <div className="text-center fw-bold fs-1">
         <div>
-          <p className="text-warning">You Win !!!</p>
+          <p className="text-warning">{this.props.result}</p>
         </div>
         <div>
           <p className="text-primary">
-            Number Win: <span className="text-warning">0</span>
+            Number Win: <span className="text-warning">{this.props.youWin}</span>
           </p>
         </div>
         <div>
@@ -23,4 +24,12 @@ class Result extends Component {
   }
 }
 
-export default Result;
+const mapStateToProps = (state) => {
+  return {
+    result: state.RockPaperScissors.result,
+    youWin: state.RockPaperScissors.youWin,
+    numberPlay: state.RockPaperScissors.numberPlay,
+  };
+};
+
+export default connect(mapStateToProps)(Result);

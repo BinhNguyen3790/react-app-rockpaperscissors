@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 class Computer extends Component {
   state = {};
   render() {
@@ -6,7 +7,7 @@ class Computer extends Component {
       <div>
         <div>
           <div className="thethink thethinkComputer">
-            <img src="../assets/imgs/rock.png" alt="rock" />
+            <img src={this.props.computer.img} alt={this.props.computer.id} />
           </div>
           <div className="speech-bubble"></div>
           <img src="../assets/imgs/computer.png" alt="computer" />
@@ -16,4 +17,10 @@ class Computer extends Component {
   }
 }
 
-export default Computer;
+const mapStateToProps = (state) => {
+  return {
+    computer: state.RockPaperScissors.computer,
+  };
+};
+
+export default connect(mapStateToProps)(Computer);
