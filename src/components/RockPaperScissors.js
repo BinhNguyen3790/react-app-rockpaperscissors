@@ -44,6 +44,9 @@ const mapDispatchToProps = (dispatch) => {
         count++;
         if (count >= 25) {
           clearInterval(randomComputerItem);
+          dispatch({
+            type:"ENDGAME"
+          })
         }
       }, 200);
     },
