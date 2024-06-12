@@ -16,7 +16,7 @@ class Result extends Component {
         </div>
         <div>
           <p className="text-primary">
-            Number Play: <span className="text-warning">0</span>
+            Number Play: <span className="text-warning">{this.props.numberPlay}</span>
           </p>
         </div>
       </div>

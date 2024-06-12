@@ -4,8 +4,8 @@ import Computer from "./Computer";
 import Result from "./Result";
 import "../assets/css/buble.css";
 import "../assets/css/RockPaperScissors.css";
+import { connect } from "react-redux";
 class RockPaperScissors extends Component {
-  state = {};
   render() {
     return (
       <div className="row">
@@ -15,7 +15,14 @@ class RockPaperScissors extends Component {
         <div className="col-6">
           <Result />
           <div className="mt-5 text-center">
-            <button className="btn bnt-rouder btn-success btn-lg">Play game</button>
+            <button
+              onClick={() => {
+                this.props.playGame();
+              }}
+              className="btn bnt-rouder btn-success btn-lg"
+            >
+              Play game
+            </button>
           </div>
         </div>
         <div className="col-3">
@@ -26,4 +33,21 @@ class RockPaperScissors extends Component {
   }
 }
 
-export default RockPaperScissors;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    playGame: () => {
+      let count = 0;
+      let randomComputerItem = setInterval(() => {
+        dispatch({
+          type: "RANDOM",
+        });
+        count++;
+        if (count >= 25) {
+          clearInterval(randomComputerItem);
+        }
+      }, 200);
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(RockPaperScissors);
