@@ -23,4 +23,7 @@
 .thethink {
 	border: 3px solid #fff;
 	border-radius: 10px;
+	position: relative;
+	min-height: 260px;
+	overflow: hidden;
 }

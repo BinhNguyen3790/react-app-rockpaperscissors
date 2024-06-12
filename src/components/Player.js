@@ -18,7 +18,13 @@ class Player extends Component {
             }
             return (
               <div className="col-4" key={index}>
-                <button style={border} className="btn btn-rounder bg-white">
+                <button
+                  onClick={() => {
+                    this.props.chose(item.id);
+                  }}
+                  style={border}
+                  className="btn btn-rounder bg-white"
+                >
                   <img src={item.img} alt={item.id} />
                 </button>
               </div>
@@ -36,4 +42,15 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Player);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    chose: (id) => {
+      dispatch({
+        type: "CHOSE",
+        id,
+      });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Player);
