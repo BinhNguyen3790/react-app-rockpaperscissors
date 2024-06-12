@@ -21,10 +21,6 @@ const RockPaperScissors = (state = initialState, action) => {
           }
           return { ...item, chose: false };
         });
-        // let index = arrayChoseUpdate.findIndex((item) => item.id === action.id);
-        // if (index !== -1) {
-        //   arrayChoseUpdate[index].chose = true;
-        // }
         state.arrayChose = arrayChoseUpdate;
         return { ...state };
       }
@@ -34,6 +30,55 @@ const RockPaperScissors = (state = initialState, action) => {
         let randomNumber = Math.floor(Math.random() * 3);
         let ramdomItem = state.arrayChose[randomNumber];
         state.computer = ramdomItem;
+        return { ...state };
+      }
+      break;
+    case "ENDGAME":
+      {
+        state.numberPlay += 1;
+        let player = state.arrayChose.find((item) => item.chose === true);
+        let computer = state.computer;
+        switch (player.id) {
+          case "rock":
+            {
+              if (computer.id === "rock") {
+                state.result = "The results were tied!!";
+              } else if (computer.id === "piper") {
+                state.result = "The results is that you lost!!";
+              } else {
+                state.result = "The results is that you won!!";
+                state.youWin += 1;
+              }
+            }
+            break;
+          case "paper":
+            {
+              if (computer.id === "rock") {
+                state.result = "The results is that you won!!";
+                state.youWin += 1;
+              } else if (computer.id === "piper") {
+                state.result = "The results were tied!!";
+              } else {
+                state.result = "The results is that you lost!!";
+              }
+            }
+            break;
+          case "scissors":
+            {
+              if (computer.id === "rock") {
+                state.result = "The results is that you lost!!";
+              } else if (computer.id === "piper") {
+                state.result = "The results is that you won!!";
+                state.youWin += 1;
+              } else {
+                state.result = "The results were tied!!";
+              }
+            }
+            break;
+          default:
+            state.result = "I'm Iron Man, I love you 3000!!!";
+            break;
+        }
         return { ...state };
       }
       break;

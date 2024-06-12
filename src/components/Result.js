@@ -11,12 +11,12 @@ class Result extends Component {
         </div>
         <div>
           <p className="text-primary">
-            Number Win: <span className="text-warning">{this.props.youWin}</span>
+            Number Play: <span className="text-warning">{this.props.numberPlay}</span>
           </p>
         </div>
         <div>
           <p className="text-primary">
-            Number Play: <span className="text-warning">{this.props.numberPlay}</span>
+            Number Win: <span className="text-warning">{this.props.youWin}</span>
           </p>
         </div>
       </div>
