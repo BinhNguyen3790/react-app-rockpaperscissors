@@ -12,18 +12,23 @@
 	left: 50%;
 	width: 0;
 	height: 0;
-	border: 35px solid transparent;
+	border: 20px solid transparent;
 	border-top-color: #fff;
 	border-bottom: 0;
 	border-left: 0;
-	margin-left: -17.5px;
-	margin-bottom: -35px;
+	margin-left: 0;
+	margin-bottom: -17px;
 }
 
 .thethink {
 	border: 3px solid #fff;
 	border-radius: 10px;
 	position: relative;
-	min-height: 260px;
+	min-height: 100px;
 	overflow: hidden;
+}
+
+.chosePlayer button {
+	padding: 1px;
+	width: 40px;
 }

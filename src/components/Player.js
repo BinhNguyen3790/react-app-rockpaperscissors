@@ -10,7 +10,7 @@ class Player extends Component {
         </div>
         <div className="speech-bubble"></div>
         <img src="../assets/imgs/player.png" alt="player" />
-        <div className="row">
+        <div className="row chosePlayer">
           {this.props.arrayChose.map((item, index) => {
             let border = {};
             if (item.chose) {
