@@ -43,7 +43,7 @@ const RockPaperScissors = (state = initialState, action) => {
             {
               if (computer.id === "rock") {
                 state.result = "The results were tied!!";
-              } else if (computer.id === "piper") {
+              } else if (computer.id === "paper") {
                 state.result = "The results is that you lost!!";
               } else {
                 state.result = "The results is that you won!!";
@@ -56,7 +56,7 @@ const RockPaperScissors = (state = initialState, action) => {
               if (computer.id === "rock") {
                 state.result = "The results is that you won!!";
                 state.youWin += 1;
-              } else if (computer.id === "piper") {
+              } else if (computer.id === "paper") {
                 state.result = "The results were tied!!";
               } else {
                 state.result = "The results is that you lost!!";
@@ -67,7 +67,7 @@ const RockPaperScissors = (state = initialState, action) => {
             {
               if (computer.id === "rock") {
                 state.result = "The results is that you lost!!";
-              } else if (computer.id === "piper") {
+              } else if (computer.id === "paper") {
                 state.result = "The results is that you won!!";
                 state.youWin += 1;
               } else {
